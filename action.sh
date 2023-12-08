@@ -37,7 +37,7 @@ git clone -b ${BRANCH} ${TARGET_REPO} ${DIRECTORY}
 cd ${DIRECTORY_PATH}
 
 # update the value
-sed -i '' -i -e "s/${SEARCH_KEY}.*/${SEARCH_KEY}${REPLACE_VALUE}${SUFFIX}/g" $FILE_PATTERN
+sed -i "s/${SEARCH_KEY}.*/${SEARCH_KEY}${REPLACE_VALUE}${SUFFIX}/g" $FILE_PATTERN
 git config --global user.email "no@reply.com"
 git config --global user.name "GitHub Actions"
 git commit -am "${SEARCH_KEY}${REPLACE_VALUE}" || echo "No changes needed"
