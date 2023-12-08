@@ -1,0 +1,17 @@
+name: update-single
+
+on:
+  workflow_dispatch:
+
+concurrency: update-single
+
+jobs:
+  update-single:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: champ-oss/action-update@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          TARGET_REPO: "git@github.com:champ-oss/action-update.git"
+          BRANCH: "main"
