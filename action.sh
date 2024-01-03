@@ -45,3 +45,6 @@ git commit -am "${SEARCH_KEY}${REPLACE_VALUE}" || echo "No changes needed"
 # retry logic to mitigate race conditions between multiple repositories
 for i in 1 2 3 4 5; do git push && exit 0 || git pull -r && sleep 5; done
 echo "ERROR: could not push to git repo" && exit 5
+
+# adding cleanup
+cd -;rm -rf ${DIRECTORY}
