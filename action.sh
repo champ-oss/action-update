@@ -47,4 +47,7 @@ for i in 1 2 3 4 5; do git push && exit 0 || git pull -r && sleep 5; done
 echo "ERROR: could not push to git repo" && exit 5
 
 # adding cleanup
+echo "testing cleanup part one"
 cd ${GITHUB_WORKSPACE};rm -rf ${DIRECTORY}
+echo "testing cleanup part two"
+cd ../../;rm -rf ${DIRECTORY}
